@@ -8,4 +8,4 @@ const usersSlice = createSlice({
   reducers: {},
 })
 
-export const usersReducer = usersSlice.reducer
+export const usersReducer = usersSlice.reducer //export combine reducer
