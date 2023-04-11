@@ -15,9 +15,19 @@ const usersSlice = createSlice({
        - we can use fetchUsers because when we send the request 
          -- createAsyncThunk automatically give us the 3 properties: fulfilled, pending, rejected
     */
-    builder.addCase(fetchUsers.pending, () => {})
-    builder.addCase(fetchUsers.fulfilled, () => {})
-    builder.addCase(fetchUsers.rejected, () => {})
+    builder.addCase(fetchUsers.pending, (state, action) => {
+      // Update state object: to show the user that we are loading data
+      state.isLoading = true
+    })
+    builder.addCase(fetchUsers.fulfilled, (state, action) => {
+      // Update state object: to show request is finished
+      state.isLoading = false
+      // get access the data we fetch from API
+      state.data = action.payload
+    })
+    builder.addCase(fetchUsers.rejected, (state, action) => {
+      // Update state object: to show the request is failed
+    })
   },
 })
 
