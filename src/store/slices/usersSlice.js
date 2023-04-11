@@ -27,6 +27,12 @@ const usersSlice = createSlice({
     })
     builder.addCase(fetchUsers.rejected, (state, action) => {
       // Update state object: to show the request is failed
+      // when the request failed -- the error message is automatically created for us
+      // we will assign the action from the request
+      // --to the error key_value pair in the initialState
+      // -- update 'null' to the message we get from api calls
+      state.isLoading = false
+      state.error = action.error
     })
   },
 })
