@@ -15,9 +15,9 @@ const usersSlice = createSlice({
        - we can use fetchUsers because when we send the request 
          -- createAsyncThunk automatically give us the 3 properties: fulfilled, pending, rejected
     */
-    builder.addCase(fetchUsers.pending)
-    builder.addCase(fetchUsers.fulfilled)
-    builder.addCase(fetchUsers.rejected)
+    builder.addCase(fetchUsers.pending, () => {})
+    builder.addCase(fetchUsers.fulfilled, () => {})
+    builder.addCase(fetchUsers.rejected, () => {})
   },
 })
 
