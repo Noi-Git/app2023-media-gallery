@@ -11,4 +11,12 @@ const fetchUsers = createAsyncThunk('users/fetch', async () => {
   return response.data
 })
 
+// create helper function to delay the handling and returning response --- so we can see the loading message
+// DEV ONLY! -- DELETE BEFORE GOTO PRODUCTION
+const pause = (duration) => {
+  return new Promise((resolve) => {
+    setTimeout(resolve, duration)
+  })
+}
+
 export { fetchUsers }
