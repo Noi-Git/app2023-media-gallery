@@ -24,7 +24,7 @@ const UsersList = () => {
     return <div>Error fetching data...</div>
   }
 
-  return <div>UsersList</div>
+  return <div>{data.length}</div>
 }
 
 export default UsersList
