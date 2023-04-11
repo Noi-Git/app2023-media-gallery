@@ -16,6 +16,14 @@ const UsersList = () => {
     dispatch(fetchUsers())
   }, [dispatch]) // add [dispatch] to sholve react warning
 
+  if (isLoading) {
+    return <div>Loading...</div>
+  }
+
+  if (error) {
+    return <div>Error fetching data...</div>
+  }
+
   return <div>UsersList</div>
 }
 
