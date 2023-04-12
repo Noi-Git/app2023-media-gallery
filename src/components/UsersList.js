@@ -22,13 +22,13 @@ const UsersList = () => {
       .finally(() => setIsLoadingUsers(false))
   }, [dispatch])
 
-  // if (isLoadingUsers) {
-  //   return <Skeleton times={6} className='h-10 w-full' />
-  // }
+  if (isLoadingUsers) {
+    return <Skeleton times={6} className='h-10 w-full' />
+  }
 
-  // if (loadingUsersError) {
-  //   return <div>Error fetching data...</div>
-  // }
+  if (loadingUsersError) {
+    return <div>Error fetching data...</div>
+  }
 
   const renderdUsers = data.map((user) => {
     return (
