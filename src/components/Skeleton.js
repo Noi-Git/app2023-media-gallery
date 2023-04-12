@@ -16,7 +16,11 @@ const Skeleton = ({ times }) => {
     .fill(0)
     .map((_, i) => {
       // (_, i):  _ mean, we don't care about that first argument; we only need index
-      return <div key={i} />
+      return (
+        <div key={i}>
+          <div />
+        </div>
+      )
     })
   return boxes
 }
