@@ -1,30 +1,43 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Button from './Button'
 import { fetchUsers, addUser } from '../store'
 import Skeleton from './Skeleton'
 
 const UsersList = () => {
-  const dispatch = useDispatch()
-  const { isLoading, data, error } = useSelector((state) => {
-    // return state.users //{data: [], isLoading: false, error: null}
+  const [isLoadingUsers, setIsLoadingUsers] = useState(false)
+  const [loadingUsersError, setLoadingUsersError] = useState(null)
 
-    // we are going to destructure those properties
+  const dispatch = useDispatch()
+  const { data } = useSelector((state) => {
+    // return state.users //{data: [], isLoading: false, error: null} -- but we only need data
+
     return state.users
   })
 
   useEffect(() => {
+    setIsLoadingUsers(true)
     // run thunk
+    // console.log(dispatch(fetchUsers()))
     dispatch(fetchUsers())
+      // use unwrap() to fix problem with dispatch promise
+      // .unwrap() --- will give us a brand new promise -- so we can follow with the conventional: .then() and .catch()
+      .unwrap()
+      .then(() => {
+        console.log('success')
+      })
+      .catch(() => {
+        console.log('failed')
+      })
   }, [dispatch]) // add [dispatch] to sholve react warning
 
-  if (isLoading) {
-    return <Skeleton times={6} className='h-10 w-full' />
-  }
+  // if (isLoadingUsers) {
+  //   return <Skeleton times={6} className='h-10 w-full' />
+  // }
 
-  if (error) {
-    return <div>Error fetching data...</div>
-  }
+  // if (loadingUsersError) {
+  //   return <div>Error fetching data...</div>
+  // }
 
   const renderdUsers = data.map((user) => {
     return (

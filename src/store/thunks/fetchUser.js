@@ -8,7 +8,7 @@ const fetchUsers = createAsyncThunk('users/fetch', async () => {
   // what we are returning from: -- response.data -- during fetching
   // the data will be automatically assigned to the payload property of the action: pending, fulfilled, rejected
   // payload is the array of users we fetch form API
-  await pause(3000) // use pause function
+  await pause(1000) // use pause function
   return response.data
 })
 
