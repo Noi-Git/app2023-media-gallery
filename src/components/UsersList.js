@@ -4,6 +4,22 @@ import Button from './Button'
 import { fetchUsers, addUser } from '../store'
 import Skeleton from './Skeleton'
 
+const useThunk = (thunk) => {
+  const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState(null)
+  const dispatch = useDispatch()
+
+  // the function below will run Thunk and dispatch and update the loading state
+  const runThunk = () => {
+    setIsLoading(true)
+    dispatch(thunk())
+      .unwrap()
+      .catch((err) => setError(err))
+      .finally(setIsLoading(false))
+  }
+  return [runThunk, isLoading, error]
+}
+
 const UsersList = () => {
   const [isLoadingUsers, setIsLoadingUsers] = useState(false)
   const [loadingUsersError, setLoadingUsersError] = useState(null)
