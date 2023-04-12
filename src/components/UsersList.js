@@ -7,6 +7,8 @@ import Skeleton from './Skeleton'
 const UsersList = () => {
   const [isLoadingUsers, setIsLoadingUsers] = useState(false)
   const [loadingUsersError, setLoadingUsersError] = useState(null)
+  const [isCreatingUser, setIsCreatingUser] = useState(false)
+  const [creatingUserError, setCreatingUserError] = useState(null)
 
   const dispatch = useDispatch()
   const { data } = useSelector((state) => {
@@ -41,8 +43,16 @@ const UsersList = () => {
   })
 
   const handleUserAdd = () => {
-    // for thunk -- will use -- dispatch(pass in the thunk function - and call it)
+    setIsCreatingUser(true)
     dispatch(addUser())
+      .unwrap()
+      // .then(() => {})
+      .catch((err) => {
+        setCreatingUserError(err)
+      })
+      .finally(() => {
+        setIsCreatingUser(false)
+      })
   }
 
   return (
