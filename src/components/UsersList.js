@@ -25,11 +25,13 @@ const UsersList = () => {
       .unwrap()
       .then(() => {
         console.log('success')
-        setIsLoadingUsers(false)
       })
       .catch((err) => {
         console.log('failed')
         setLoadingUsersError(err)
+      })
+      // the .finally will be call no matter whether the request success or failed
+      .finally(() => {
         setIsLoadingUsers(false)
       })
   }, [dispatch]) // add [dispatch] to sholve react warning
