@@ -25,9 +25,12 @@ const UsersList = () => {
       .unwrap()
       .then(() => {
         console.log('success')
+        setIsLoadingUsers(false)
       })
-      .catch(() => {
+      .catch((err) => {
         console.log('failed')
+        setLoadingUsersError(err)
+        setIsLoadingUsers(false)
       })
   }, [dispatch]) // add [dispatch] to sholve react warning
 
