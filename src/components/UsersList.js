@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useCallback } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Button from './Button'
 import { fetchUsers, addUser } from '../store'
@@ -10,13 +10,13 @@ const useThunk = (thunk) => {
   const dispatch = useDispatch()
 
   // the function below will run Thunk and dispatch and update the loading state
-  const runThunk = () => {
+  const runThunk = useCallback(() => {
     setIsLoading(true)
     dispatch(thunk())
       .unwrap()
       .catch((err) => setError(err))
       .finally(setIsLoading(false))
-  }
+  }, [dispatch, thunk])
   return [runThunk, isLoading, error]
 }
 
