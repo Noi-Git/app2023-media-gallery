@@ -10,32 +10,17 @@ const UsersList = () => {
 
   const dispatch = useDispatch()
   const { data } = useSelector((state) => {
-    // return state.users //{data: [], isLoading: false, error: null} -- but we only need data
-
     return state.users
   })
 
   useEffect(() => {
     setIsLoadingUsers(true)
-    // run thunk
-    // console.log(dispatch(fetchUsers()))
+
     dispatch(fetchUsers())
-      // use unwrap() to fix problem with dispatch promise
-      // .unwrap() --- will give us a brand new promise -- so we can follow with the conventional: .then() and .catch()
       .unwrap()
-      // in this case -- we can also delete .then() -- since it is not use for anything
-      .then(() => {
-        console.log('success')
-      })
-      .catch((err) => {
-        console.log('failed')
-        setLoadingUsersError(err)
-      })
-      // the .finally will be call no matter whether the request success or failed
-      .finally(() => {
-        setIsLoadingUsers(false)
-      })
-  }, [dispatch]) // add [dispatch] to sholve react warning
+      .catch((err) => setLoadingUsersError(err))
+      .finally(() => setIsLoadingUsers(false))
+  }, [dispatch])
 
   // if (isLoadingUsers) {
   //   return <Skeleton times={6} className='h-10 w-full' />
