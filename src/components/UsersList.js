@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchUsers } from '../store'
+import Button from './Button'
+import { fetchUsers, addUser } from '../store'
 import Skeleton from './Skeleton'
 
 const UsersList = () => {
@@ -34,7 +35,21 @@ const UsersList = () => {
       </div>
     )
   })
-  return <div>{renderdUsers}</div>
+
+  const handleUserAdd = () => {
+    // for thunk -- will use -- dispatch(pass in the thunk function - and call it)
+    dispatch(addUser())
+  }
+
+  return (
+    <div>
+      <div className='flex flex-row justify-between m-3'>
+        <h1 className='m-2 text-xl'>Users</h1>
+        <Button onClick={handleUserAdd}>+ Add User</Button>
+      </div>
+      <div>{renderdUsers}</div>
+    </div>
+  )
 }
 
 export default UsersList
