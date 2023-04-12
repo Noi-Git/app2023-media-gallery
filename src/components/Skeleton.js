@@ -1,12 +1,13 @@
 import classNames from 'classnames'
 
-const Skeleton = ({ times }) => {
+const Skeleton = ({ times, className }) => {
   const outerClassNames = classNames(
     'relative',
     'overflow-hidden',
     'bg-gray-200',
     'rounded',
-    'mb-2.5'
+    'mb-2.5',
+    className
   )
   const innerClassNames = classNames(
     'animate-shimmer',
@@ -24,7 +25,7 @@ const Skeleton = ({ times }) => {
     .map((_, i) => {
       // (_, i):  _ mean, we don't care about that first argument; we only need index
       return (
-        <div key={i} classNames={outerClassNames}>
+        <div key={i} className={outerClassNames}>
           <div className={innerClassNames} />
         </div>
       )
