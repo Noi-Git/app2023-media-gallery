@@ -1,33 +1,14 @@
-import { useEffect, useState, useCallback } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useEffect } from 'react'
+import { useSelector } from 'react-redux'
+import { useThunk } from '../hooks/use-thunk'
 import Button from './Button'
 import { fetchUsers, addUser } from '../store'
 import Skeleton from './Skeleton'
-
-const useThunk = (thunk) => {
-  const [isLoading, setIsLoading] = useState(false)
-  const [error, setError] = useState(null)
-  const dispatch = useDispatch()
-
-  // the function below will run Thunk and dispatch and update the loading state
-  const runThunk = useCallback(
-    (arg) => {
-      setIsLoading(true)
-      dispatch(thunk(arg))
-        .unwrap()
-        .catch((err) => setError(err))
-        .finally(() => setIsLoading(false))
-    },
-    [dispatch, thunk]
-  )
-  return [runThunk, isLoading, error]
-}
 
 const UsersList = () => {
   const [doFetchUsers, isLoadingUsers, loadingUsersError] = useThunk(fetchUsers)
   const [doCreateUser, isCreatingUser, creatingUserError] = useThunk(addUser)
 
-  const dispatch = useDispatch()
   const { data } = useSelector((state) => {
     return state.users
   })
