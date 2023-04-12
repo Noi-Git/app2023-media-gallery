@@ -7,7 +7,16 @@ const addUser = createAsyncThunk('users/add', async () => {
     name: faker.name.fullName(),
   })
 
+  await pause(1000) // use pause function
+
   return response.data // this info will show up as payload
 })
+
+// DEV ONLY! -- DELETE BEFORE GOTO PRODUCTION
+const pause = (duration) => {
+  return new Promise((resolve) => {
+    setTimeout(resolve, duration)
+  })
+}
 
 export { addUser }
