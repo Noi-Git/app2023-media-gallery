@@ -7,7 +7,7 @@ const addUser = createAsyncThunk('users/add', async () => {
     name: faker.name.fullName(),
   })
 
-  return response.data
+  return response.data // this info will show up as payload
 })
 
 export { addUser }
