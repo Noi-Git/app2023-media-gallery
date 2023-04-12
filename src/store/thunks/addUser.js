@@ -7,7 +7,7 @@ const addUser = createAsyncThunk('users/add', async () => {
     name: faker.name.fullName(),
   })
 
-  await pause(1000) // use pause function
+  await pause(3000) // use pause function
 
   return response.data // this info will show up as payload
 })

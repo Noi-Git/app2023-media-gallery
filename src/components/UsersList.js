@@ -10,13 +10,16 @@ const useThunk = (thunk) => {
   const dispatch = useDispatch()
 
   // the function below will run Thunk and dispatch and update the loading state
-  const runThunk = useCallback(() => {
-    setIsLoading(true)
-    dispatch(thunk())
-      .unwrap()
-      .catch((err) => setError(err))
-      .finally(setIsLoading(false))
-  }, [dispatch, thunk])
+  const runThunk = useCallback(
+    (arg) => {
+      setIsLoading(true)
+      dispatch(thunk(arg))
+        .unwrap()
+        .catch((err) => setError(err))
+        .finally(() => setIsLoading(false))
+    },
+    [dispatch, thunk]
+  )
   return [runThunk, isLoading, error]
 }
 
