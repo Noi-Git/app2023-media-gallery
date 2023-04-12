@@ -1,22 +1,17 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
 import { faker } from '@faker-js/faker'
+import { pause } from '../../hooks/pause'
 
 const addUser = createAsyncThunk('users/add', async () => {
   const response = await axios.post('http://localhost:3005/users', {
     name: faker.name.fullName(),
   })
 
-  await pause(1000) // use pause function
+  // DEV ONLY! -- DELETE BEFORE GOTO PRODUCTION
+  await pause(1000)
 
   return response.data // this info will show up as payload
 })
-
-// DEV ONLY! -- DELETE BEFORE GOTO PRODUCTION
-const pause = (duration) => {
-  return new Promise((resolve) => {
-    setTimeout(resolve, duration)
-  })
-}
 
 export { addUser }
