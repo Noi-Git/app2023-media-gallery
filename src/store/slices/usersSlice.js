@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { fetchUsers } from '../thunks/fetchUser'
+import { addUser } from '../thunks/addUser'
 
 const usersSlice = createSlice({
   name: 'users',
@@ -31,6 +32,18 @@ const usersSlice = createSlice({
       // we will assign the action from the request
       // --to the error key_value pair in the initialState
       // -- update 'null' to the message we get from api calls
+      state.isLoading = false
+      state.error = action.error
+    })
+    builder.addCase(addUser.pending, (state, action) => {
+      state.isLoading = true
+    })
+    builder.addCase(addUser.fulfilled, (state, action) => {
+      state.isLoading = false
+      // push new user to the data[]
+      state.data.push(action.payload)
+    })
+    builder.addCase(addUser.rejected, (state, action) => {
       state.isLoading = false
       state.error = action.error
     })

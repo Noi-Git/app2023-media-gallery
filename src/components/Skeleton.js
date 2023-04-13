@@ -1,22 +1,34 @@
 import classNames from 'classnames'
 
-const Skeleton = ({ times }) => {
-  /* === first solution
-  const boxes = []
+const Skeleton = ({ times, className }) => {
+  const outerClassNames = classNames(
+    'relative',
+    'overflow-hidden',
+    'bg-gray-200',
+    'rounded',
+    'mb-2.5',
+    className
+  )
+  const innerClassNames = classNames(
+    'animate-shimmer',
+    'absolute',
+    'inset-0',
+    '-translate-x-full',
+    'bg-gradient-to-r',
+    'from-gray-200',
+    'via-white',
+    'to-gray-200'
+  )
 
-  for (let i = 0; i < times; i++) {
-    boxes.push(<div key={i}></div>)
-  }
-
-  return boxes
-  */
-
-  // this one below is doing the exact same thing with the for...loop
   const boxes = Array(times)
     .fill(0)
     .map((_, i) => {
       // (_, i):  _ mean, we don't care about that first argument; we only need index
-      return <div key={i} />
+      return (
+        <div key={i} className={outerClassNames}>
+          <div className={innerClassNames} />
+        </div>
+      )
     })
   return boxes
 }

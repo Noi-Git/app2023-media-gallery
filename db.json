@@ -1,5 +1,38 @@
 {
-  "users": [{ "id": 1, "name": "Myra" }],
+  "users": [
+    {
+      "id": 1,
+      "name": "Myra"
+    },
+    {
+      "name": "Tyler Hintz",
+      "id": 2
+    },
+    {
+      "name": "Jane Kris",
+      "id": 3
+    },
+    {
+      "name": "Ms. Randall Dare",
+      "id": 4
+    },
+    {
+      "name": "Bessie Stanton",
+      "id": 5
+    },
+    {
+      "name": "Jim Yundt",
+      "id": 6
+    },
+    {
+      "name": "Blanca Bernhard",
+      "id": 7
+    },
+    {
+      "name": "Elmer Bogan DDS",
+      "id": 8
+    }
+  ],
   "albums": [],
   "photos": []
 }
