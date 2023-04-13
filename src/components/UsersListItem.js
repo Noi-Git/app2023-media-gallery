@@ -4,7 +4,7 @@ import { removeUser } from '../store'
 import { useThunk } from '../hooks/use-thunk'
 
 const UsersListItem = ({ user }) => {
-  const [] = useThunk(removeUser)
+  const [doRemoveUser, isLoading, error] = useThunk(removeUser)
 
   return (
     <div className='mb-2 border rounded'>
