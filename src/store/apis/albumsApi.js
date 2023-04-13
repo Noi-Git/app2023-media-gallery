@@ -12,7 +12,7 @@ const albumsApi = createApi({
         query: (user) => {
           return {
             // tell redux toolkit query -- how to make a request to fetch the list of album
-            url: 'albums',
+            url: '/albums',
             params: {
               userId: user.id,
             },
@@ -23,3 +23,6 @@ const albumsApi = createApi({
     }
   },
 })
+
+export const { useFetchAlbumsQuery } = albumsApi
+export { albumsApi }
