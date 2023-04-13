@@ -18,7 +18,7 @@ const ExpandablePanel = ({ header, children }) => {
           {expanded ? <GoChevronDown /> : <GoChevronLeft />}
         </div>
       </div>
-      <div className='p-2 border-t'>{children}</div>
+      {expanded && <div className='p-2 border-t'>{children}</div>}
     </div>
   )
 }
