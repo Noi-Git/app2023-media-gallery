@@ -6,10 +6,14 @@ import { useThunk } from '../hooks/use-thunk'
 const UsersListItem = ({ user }) => {
   const [doRemoveUser, isLoading, error] = useThunk(removeUser)
 
+  const handleClick = () => {
+    doRemoveUser(user) // pass user in as an argument to the delete request
+  }
+
   return (
     <div className='mb-2 border rounded'>
       <div className='flex p-2 justify-between items-center cursor-pointer'>
-        <Button loading={isLoading}>
+        <Button loading={isLoading} onClick={handleClick}>
           <GoTrashcan />
         </Button>
         {error && <div>Error deleting user.</div>}
