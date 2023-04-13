@@ -1,5 +1,5 @@
 // export point for everyting related to redux
-import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
+import { configureStore } from '@reduxjs/toolkit'
 import { setupListeners } from '@reduxjs/toolkit/query'
 import { usersReducer } from './slices/usersSlice'
 import { albumsApi } from './apis/albumsApi'

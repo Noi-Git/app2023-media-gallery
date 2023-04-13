@@ -1,7 +1,11 @@
-import React from 'react'
+import { useFetchAlbumsQuery } from '../store'
 
 const AlbumsList = ({ user }) => {
-  // show this inside UsersListItem
+  // when calling useFetchAlbumsQuery -- we are fetching data
+  const { data, error, isLoading } = useFetchAlbumsQuery(user)
+
+  console.log(data, error, isLoading)
+
   return <div>Albums for {user.name}</div>
 }
 
