@@ -26,13 +26,6 @@ const UsersList = () => {
   } else {
     content = data.map((user) => {
       return <UsersListItem key={user.id} user={user} /> // pass user to UsersListItem via props
-      // return (
-      //   <div key={user.id} className='mb-2 border rounded'>
-      //     <div className='flex p-2 justify-between items-center cursor-pointer'>
-      //       {user.name}
-      //     </div>
-      //   </div>
-      // )
     })
   }
 
