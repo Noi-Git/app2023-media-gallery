@@ -53,7 +53,7 @@ const usersSlice = createSlice({
     })
     builder.addCase(removeUser.fulfilled, (state, action) => {
       state.isLoading = false
-      // state.data.filter(id !== user.id)
+      state.data.filter((user) => user.id !== action.payload.id)
       console.log(action)
     })
     builder.addCase(removeUser.rejected, (state, action) => {
