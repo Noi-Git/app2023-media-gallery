@@ -10,7 +10,11 @@ const albumsApi = createApi({
     //contain additional config of request
     return {
       addAlbum: builder.mutation({
-        invalidatesTags: ['Album'],
+        // the (user) we pass in as argument here -- comes form AlbumsList.js
+        //   const handleAddAlbum = () => {addAlbum(user)} <-- that user is what we get in the 'invalidatesTags: (user)'
+        invalidatesTags: (user) => {
+          return [{ type: 'Album', id: user.id }]
+        },
         query: (user) => {
           return {
             url: '/albums',
