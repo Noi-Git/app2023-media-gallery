@@ -1,4 +1,4 @@
-import { useFetchAlbumsQuery } from '../store'
+import { useFetchAlbumsQuery, useAddAlbumMutation } from '../store'
 import Skeleton from './Skeleton'
 import ExpandablePanel from './ExpandablePanel'
 import Button from './Button'
@@ -8,7 +8,11 @@ const AlbumsList = ({ user }) => {
   // the (user) argument -- is send along to the query function in albumsApi -- query: (user) => {}
   // useFetchAlbumsQuery(user) -- is like useEffect
   const { data, error, isLoading } = useFetchAlbumsQuery(user)
-  // console.log(data, error, isLoading)
+  const [addAlbum, results] = useAddAlbumMutation()
+
+  const handleAddAlbum = () => {
+    addAlbum(user)
+  }
 
   let content
   if (isLoading) {
@@ -29,7 +33,10 @@ const AlbumsList = ({ user }) => {
 
   return (
     <div>
-      <div>Albums for {user.name}</div>
+      <div>
+        Albums for {user.name}
+        <Button onClick={handleAddAlbum}>+ Add Album</Button>
+      </div>
       <div>{content}</div>
     </div>
   )

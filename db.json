@@ -26,6 +26,26 @@
       "id": 10,
       "title": "Hiking Trip",
       "userId": 1
+    },
+    {
+      "userId": 1,
+      "title": "Rustic Granite Fish",
+      "id": 11
+    },
+    {
+      "userId": 1,
+      "title": "Small Granite Computer",
+      "id": 12
+    },
+    {
+      "userId": 1,
+      "title": "Electronic Metal Cheese",
+      "id": 13
+    },
+    {
+      "userId": 1,
+      "title": "Electronic Fresh Gloves",
+      "id": 14
     }
   ],
   "photos": []
