@@ -1,17 +1,19 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { faker } from '@faker-js/faker'
+import { pause } from '../../hooks/pause'
 
 const albumsApi = createApi({
   reducerPath: 'albums',
   baseQuery: fetchBaseQuery({
     baseUrl: 'http://localhost:3005',
+    fetchFn: async (...args) => {
+      await pause(1000)
+      return fetch(...args)
+    },
   }),
   endpoints(builder) {
-    //contain additional config of request
     return {
       addAlbum: builder.mutation({
-        // the (user) we pass in as argument here -- comes form AlbumsList.js
-        //   const handleAddAlbum = () => {addAlbum(user)} <-- that user is what we get in the 'invalidatesTags: (user)'
         invalidatesTags: (result, error, user) => {
           return [{ type: 'Album', id: user.id }]
         },
