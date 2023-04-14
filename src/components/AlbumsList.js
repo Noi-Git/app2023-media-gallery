@@ -17,7 +17,7 @@ const AlbumsList = ({ user }) => {
 
   let content
   if (isLoading) {
-    content = <Skeleton time={3} />
+    content = <Skeleton className='h-10 w-full' time={3} />
   } else if (error) {
     content = <div>Error loading albums.</div>
   } else {
