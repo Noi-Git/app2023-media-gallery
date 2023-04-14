@@ -6,6 +6,7 @@ const albumsApi = createApi({
   reducerPath: 'albums',
   baseQuery: fetchBaseQuery({
     baseUrl: 'http://localhost:3005',
+    //REMOVE ON PRODUCTION
     fetchFn: async (...args) => {
       await pause(1000)
       return fetch(...args)
