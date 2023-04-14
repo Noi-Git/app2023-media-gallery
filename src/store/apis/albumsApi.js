@@ -12,7 +12,7 @@ const albumsApi = createApi({
       addAlbum: builder.mutation({
         // the (user) we pass in as argument here -- comes form AlbumsList.js
         //   const handleAddAlbum = () => {addAlbum(user)} <-- that user is what we get in the 'invalidatesTags: (user)'
-        invalidatesTags: (user) => {
+        invalidatesTags: (result, error, user) => {
           return [{ type: 'Album', id: user.id }]
         },
         query: (user) => {
@@ -31,7 +31,7 @@ const albumsApi = createApi({
         // -- will automatically call with argument of (result, error, arg) -- arg for use is 'user'
         // providesTags: (result, error, user) => {
         // the auto generated tag will solve problem of RTX refecthing data only for all user not related to the one we have made the change
-        providesTags: (user) => {
+        providesTags: (result, error, user) => {
           return [{ type: 'Album', id: user.id }]
         },
         query: (user) => {
