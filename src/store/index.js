@@ -16,6 +16,11 @@ export const store = configureStore({
   },
 })
 
+// TEMPORARY
+// to see what we got: goto browser console -- store.getState() -- look at 'queries'
+// refresh the page -- click on user dropdown -- run store.getState() -- you will see info in 'queries'
+window.store = store
+
 setupListeners(store.dispatch)
 
 export * from './thunks/fetchUser'
