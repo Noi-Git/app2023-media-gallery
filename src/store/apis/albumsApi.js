@@ -22,6 +22,7 @@ const albumsApi = createApi({
         },
       }),
       fetchAlbums: builder.query({
+        providesTags: ['Album'],
         query: (user) => {
           return {
             // tell redux toolkit query -- how to make a request to fetch the list of album
