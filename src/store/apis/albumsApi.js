@@ -23,7 +23,13 @@ const albumsApi = createApi({
         },
       }),
       fetchAlbums: builder.query({
-        providesTags: ['Album'],
+        // the proviedsTags function
+        // -- will automatically call with argument of (result, error, arg) -- arg for use is 'user'
+        // providesTags: (result, error, user) => {
+        // the auto generated tag will solve problem of RTX refecthing data only for all user not related to the one we have made the change
+        providesTags: (user) => {
+          return [{ type: 'Album', id: user.id }]
+        },
         query: (user) => {
           return {
             // tell redux toolkit query -- how to make a request to fetch the list of album
