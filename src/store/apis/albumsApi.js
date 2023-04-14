@@ -40,5 +40,5 @@ const albumsApi = createApi({
 // useFetchAlbumsQuery is a hook that auto generate by RTX
 // the name came from 'fetchAlbums' -- line 12
 // if we change the name on line 12 -- the hook will be generated again refecting that name
-export const { useFetchAlbumsQuery } = albumsApi
+export const { useFetchAlbumsQuery, useAddAlbumMutation } = albumsApi
 export { albumsApi }
