@@ -9,6 +9,7 @@ const AlbumsList = ({ user }) => {
   // useFetchAlbumsQuery(user) -- is like useEffect
   const { data, error, isLoading } = useFetchAlbumsQuery(user)
   const [addAlbum, results] = useAddAlbumMutation()
+  console.log(results)
 
   const handleAddAlbum = () => {
     addAlbum(user)
