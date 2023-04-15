@@ -44,12 +44,12 @@ const albumsApi = createApi({
         },
       }),
       fetchAlbums: builder.query({
-        // the proviedsTags function
-        // -- will automatically call with argument of (result, error, arg) -- arg for use is 'user'
-        // providesTags: (result, error, user) => {
-        // the auto generated tag will solve problem of RTX refecthing data only for all user not related to the one we have made the change
         providesTags: (result, error, user) => {
-          return [{ type: 'Album', id: user.id }]
+          const tags = result.map((album) => {
+            return { type: 'Album', id: album.id }
+          })
+          tags.push({ type: 'UsersAlbums', id: user.id })
+          return tags
         },
         query: (user) => {
           return {
