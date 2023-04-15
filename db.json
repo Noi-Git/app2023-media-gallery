@@ -5,68 +5,11 @@
       "name": "Myra"
     },
     {
-      "name": "Tyler Hintz",
-      "id": 2
-    },
-    {
-      "name": "Jane Kris",
-      "id": 3
-    },
-    {
       "name": "Bessie Stanton",
       "id": 5
-    },
-    {
-      "name": "Kay Volkman",
-      "id": 6
     }
   ],
   "albums": [
-    {
-      "userId": 1,
-      "title": "Small Granite Computer",
-      "id": 12
-    },
-    {
-      "userId": 1,
-      "title": "Electronic Metal Cheese",
-      "id": 13
-    },
-    {
-      "userId": 1,
-      "title": "Electronic Fresh Gloves",
-      "id": 14
-    },
-    {
-      "userId": 2,
-      "title": "Sleek Wooden Shoes",
-      "id": 15
-    },
-    {
-      "userId": 1,
-      "title": "Incredible Metal Ball",
-      "id": 16
-    },
-    {
-      "userId": 1,
-      "title": "Practical Fresh Cheese",
-      "id": 17
-    },
-    {
-      "userId": 3,
-      "title": "Elegant Bronze Tuna",
-      "id": 18
-    },
-    {
-      "userId": 2,
-      "title": "Electronic Fresh Gloves",
-      "id": 19
-    },
-    {
-      "userId": 2,
-      "title": "Incredible Bronze Chair",
-      "id": 20
-    },
     {
       "userId": 1,
       "title": "Luxurious Concrete Pizza",
