@@ -7,7 +7,7 @@ const AlbumsList = ({ user }) => {
   // when calling useFetchAlbumsQuery -- we are fetching data
   // the (user) argument -- is send along to the query function in albumsApi -- query: (user) => {}
   // useFetchAlbumsQuery(user) -- is like useEffect
-  const { data, error, isLoading } = useFetchAlbumsQuery(user)
+  const { data, error, isFetching } = useFetchAlbumsQuery(user)
   const [addAlbum, results] = useAddAlbumMutation()
   console.log(results)
 
@@ -16,7 +16,7 @@ const AlbumsList = ({ user }) => {
   }
 
   let content
-  if (isLoading) {
+  if (isFetching) {
     content = <Skeleton className='h-10 w-full' time={3} />
   } else if (error) {
     content = <div>Error loading albums.</div>

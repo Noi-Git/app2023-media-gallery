@@ -5,21 +5,11 @@
       "name": "Myra"
     },
     {
-      "name": "Bessie Stanton",
-      "id": 5
+      "name": "Kelli Anderson I",
+      "id": 6
     }
   ],
   "albums": [
-    {
-      "userId": 1,
-      "title": "Luxurious Concrete Pizza",
-      "id": 21
-    },
-    {
-      "userId": 5,
-      "title": "Sleek Rubber Soap",
-      "id": 22
-    },
     {
       "userId": 1,
       "title": "Licensed Granite Keyboard",
@@ -29,11 +19,6 @@
       "userId": 1,
       "title": "Handmade Metal Shoes",
       "id": 24
-    },
-    {
-      "userId": 5,
-      "title": "Fantastic Rubber Shoes",
-      "id": 25
     }
   ],
   "photos": []
