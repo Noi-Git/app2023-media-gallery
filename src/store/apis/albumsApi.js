@@ -17,7 +17,7 @@ const albumsApi = createApi({
       removeAlbum: builder.mutation({
         invalidatesTags: (result, error, album) => {
           console.log(album)
-          // return [{ type: 'Album', id: album.userId }]
+          return [{ type: 'Album', id: album.id }]
 
           // solution: in case the album object does not have userID
         },
