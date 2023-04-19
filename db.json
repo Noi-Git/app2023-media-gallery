@@ -24,7 +24,18 @@
       "userId": 1,
       "title": "Generic Concrete Shirt",
       "id": 25
+    },
+    {
+      "userId": 1,
+      "title": "Awesome Granite Table",
+      "id": 26
     }
   ],
-  "photos": []
+  "photos": [
+    {
+      "albumId": 24,
+      "url": "https://loremflickr.com/150/150/abstract?lock=35434",
+      "id": 1
+    }
+  ]
 }

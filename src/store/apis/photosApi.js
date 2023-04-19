@@ -24,7 +24,7 @@ const photosApi = createApi({
       addPhoto: builder.mutation({
         query: (album) => {
           return {
-            methos: 'POST',
+            method: 'POST',
             url: '/photos',
             body: {
               albumId: album.id,
