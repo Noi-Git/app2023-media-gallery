@@ -50,3 +50,5 @@ export const {
   useAddPhotoMutation,
   useRemovePhotoMutation,
 } = photosApi
+
+export { photosApi } // to connect to redux store
