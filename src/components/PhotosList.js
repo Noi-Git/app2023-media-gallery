@@ -5,7 +5,15 @@ const PhotosList = ({ album }) => {
   useFetchPhotosQuery(album)
 
   const [addPhoto, addPhtotResult] = useAddPhotoMutation()
-  return 'PhotosList'
+
+  return (
+    <div>
+      <div className='m-2 flex flex-row items-center justify-between'>
+        <h3 className='text-lg font-bold'>Photos In {album.title} </h3>
+        <Button loading={''}>+ Add Photo</Button>
+      </div>
+    </div>
+  )
 }
 
 export default PhotosList
