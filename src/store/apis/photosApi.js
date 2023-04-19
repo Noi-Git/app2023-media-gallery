@@ -44,3 +44,9 @@ const photosApi = createApi({
     }
   },
 })
+
+export const {
+  useFtechPhotosQuery,
+  useAddPhotoMutation,
+  useRemovePhotoMutation,
+} = photosApi
