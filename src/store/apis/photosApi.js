@@ -1,4 +1,4 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query'
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { faker } from '@faker-js/faker'
 
 const photosApi = createApi({
@@ -46,9 +46,8 @@ const photosApi = createApi({
 })
 
 export const {
-  useFtechPhotosQuery,
+  useFetchPhotosQuery,
   useAddPhotoMutation,
   useRemovePhotoMutation,
 } = photosApi
-
 export { photosApi } // to connect to redux store

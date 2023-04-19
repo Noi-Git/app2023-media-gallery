@@ -1,7 +1,8 @@
-import React from 'react'
+import { useFetchPhotosQuery } from '../store'
 
 const PhotosList = ({ album }) => {
-  return <div>PhotosList</div>
+  useFetchPhotosQuery(album)
+  return 'PhotosList'
 }
 
 export default PhotosList

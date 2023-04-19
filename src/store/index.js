@@ -36,7 +36,7 @@ export {
   useRemoveAlbumMutation,
 } from './apis/albumsApi'
 export {
-  useFtechPhotosQuery,
+  useFetchPhotosQuery,
   useAddPhotoMutation,
   useRemovePhotoMutation,
 } from './apis/photosApi'
