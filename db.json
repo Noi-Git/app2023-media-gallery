@@ -11,11 +11,6 @@
   ],
   "albums": [
     {
-      "userId": 1,
-      "title": "Licensed Granite Keyboard",
-      "id": 23
-    },
-    {
       "userId": 6,
       "title": "Bespoke Soft Fish",
       "id": 24
@@ -38,14 +33,29 @@
       "id": 1
     },
     {
-      "albumId": 24,
-      "url": "https://loremflickr.com/150/150/abstract?lock=39312",
+      "albumId": 25,
+      "url": "https://loremflickr.com/150/150/abstract?lock=43189",
       "id": 2
     },
     {
-      "albumId": 23,
-      "url": "https://loremflickr.com/150/150/abstract?lock=27056",
-      "id": 3
+      "albumId": 25,
+      "url": "https://loremflickr.com/150/150/abstract?lock=31084",
+      "id": 5
+    },
+    {
+      "albumId": 25,
+      "url": "https://loremflickr.com/150/150/abstract?lock=66491",
+      "id": 6
+    },
+    {
+      "albumId": 26,
+      "url": "https://loremflickr.com/150/150/abstract?lock=63830",
+      "id": 7
+    },
+    {
+      "albumId": 26,
+      "url": "https://loremflickr.com/150/150/abstract?lock=71085",
+      "id": 8
     }
   ]
 }
