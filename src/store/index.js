@@ -35,3 +35,8 @@ export {
   useAddAlbumMutation,
   useRemoveAlbumMutation,
 } from './apis/albumsApi'
+export {
+  useFtechPhotosQuery,
+  useAddPhotoMutation,
+  useRemovePhotoMutation,
+} from './apis/photosApi'
