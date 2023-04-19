@@ -6,7 +6,9 @@ const PhotosList = ({ album }) => {
 
   const [addPhoto, addPhotoResult] = useAddPhotoMutation()
 
-  const handleAddPhoto = () => {}
+  const handleAddPhoto = () => {
+    addPhoto(album)
+  }
 
   return (
     <div>
