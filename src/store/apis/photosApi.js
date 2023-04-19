@@ -37,7 +37,7 @@ const photosApi = createApi({
         query: (photo) => {
           return {
             method: 'DELETE',
-            url: `/photos/$${photo.id}`,
+            url: `/photos/${photo.id}`,
           }
         },
       }),

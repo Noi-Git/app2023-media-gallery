@@ -2,8 +2,14 @@ import { GoTrashcan } from 'react-icons/go'
 import { useRemovePhotoMutation } from '../store'
 
 const PhotosListItem = ({ photo }) => {
+  const [removePhoto] = useRemovePhotoMutation()
+
+  const handleRemovePhoto = () => {
+    removePhoto(photo)
+  }
+
   return (
-    <div className='relative m-2 cursor-pointer'>
+    <div onClick={handleRemovePhoto} className='relative m-2 cursor-pointer'>
       <img
         src={photo.url}
         alt={`random pic of ${photo.title}`}
