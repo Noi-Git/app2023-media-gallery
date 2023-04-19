@@ -2,7 +2,7 @@ import React from 'react'
 
 const PhotosListItem = ({ photo }) => {
   return (
-    <div>
+    <div className='relative m-2'>
       <img
         src={photo.url}
         alt={`random pic of ${photo.title}`}
